@@ -35,7 +35,8 @@ void main() {
       when(() => mockCharactersRepository.getListOfCharacters(any()))
           .thenAnswer((_) async => Right(tCharacters));
       // The "act" phase of the test. Call the not-yet-existent method.
-      final result = await usecase(const Params(nameStarsWith: tNameStarsWith));
+      final result = await usecase(
+          const CharacterListParams(nameStarsWith: tNameStarsWith));
       // UseCase should simply return whatever was returned from the Repository
       expect(result, Right(tCharacters));
       // Verify that the method has been called on the Repository
