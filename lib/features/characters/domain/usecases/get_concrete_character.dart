@@ -6,21 +6,21 @@ import '../../../../core/error/failure.dart';
 import '../entities/character.dart';
 import '../repositories/characters_repository.dart';
 
-class GetConcreteCharacter extends UseCase<Character, Params> {
+class GetConcreteCharacter extends UseCase<Character, ConcreteParams> {
   final CharactersRepository repository;
 
   GetConcreteCharacter(this.repository);
 
   @override
-  Future<Either<Failure, Character>> call(Params params) async {
+  Future<Either<Failure, Character>> call(ConcreteParams params) async {
     return await repository.getConcreteCharacter(params.number);
   }
 }
 
-class Params extends Equatable {
+class ConcreteParams extends Equatable {
   final int number;
 
-  const Params({required this.number});
+  const ConcreteParams({required this.number});
 
   @override
   List<Object?> get props => [number];

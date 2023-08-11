@@ -7,21 +7,23 @@ import '../../../../core/error/failure.dart';
 import '../entities/character.dart';
 import '../repositories/characters_repository.dart';
 
-class GetListOfCharacters extends UseCase<List<Character>, Params> {
+class GetListOfCharacters
+    extends UseCase<List<Character>, CharacterListParams> {
   final CharactersRepository repository;
 
   GetListOfCharacters(this.repository);
 
   @override
-  Future<Either<Failure, List<Character>>> call(Params params) async {
+  Future<Either<Failure, List<Character>>> call(
+      CharacterListParams params) async {
     return await repository.getListOfCharacters(params.nameStarsWith);
   }
 }
 
-class Params extends Equatable {
+class CharacterListParams extends Equatable {
   final String nameStarsWith;
 
-  const Params({required this.nameStarsWith});
+  const CharacterListParams({required this.nameStarsWith});
 
   @override
   List<Object?> get props => [nameStarsWith];
