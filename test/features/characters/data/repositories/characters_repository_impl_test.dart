@@ -1,6 +1,6 @@
 import 'package:bia_flutter_test/core/error/exception.dart';
 import 'package:bia_flutter_test/core/error/failure.dart';
-import 'package:bia_flutter_test/core/platform/network_info.dart';
+import 'package:bia_flutter_test/core/network/network_info.dart';
 import 'package:bia_flutter_test/features/characters/data/datasources/characters_remote_data_source.dart';
 import 'package:bia_flutter_test/features/characters/data/models/character_model.dart';
 import 'package:bia_flutter_test/features/characters/data/repositories/characters_repository_impl.dart';

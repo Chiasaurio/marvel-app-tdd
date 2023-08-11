@@ -4,7 +4,7 @@ import 'package:bia_flutter_test/features/characters/domain/repositories/charact
 import 'package:dartz/dartz.dart';
 
 import '../../../../core/error/exception.dart';
-import '../../../../core/platform/network_info.dart';
+import '../../../../core/network/network_info.dart';
 import '../datasources/characters_remote_data_source.dart';
 
 class CharactersRepositoryImpl implements CharactersRepository {
