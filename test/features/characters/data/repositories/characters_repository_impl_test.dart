@@ -114,12 +114,6 @@ void main() {
 
   group('getListCharacters', () {
     const tCharacterStartsWith = "";
-    // const tCharacterModel = CharacterModel(
-    //     name: "Spider-Girl (Anya Corazon)",
-    //     description: " ",
-    //     thumbnail: "http://i.annihil.us/u/prod/marvel/i/mg/a/10/528d369de3e4f");
-
-    // const Character tCharacter = tCharacterModel;
     const tListCharacters = <CharacterModel>[];
     test(
       'should check if the device is online',
