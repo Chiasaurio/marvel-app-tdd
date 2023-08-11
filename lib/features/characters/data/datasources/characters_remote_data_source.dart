@@ -41,7 +41,7 @@ class CharactersRemoteDataSourceImpl implements CharactersRemoteDataSource {
 
     if (response.statusCode == 200) {
       return CharacterModel.fromJson(
-          json.decode(response.body)["data"]["results"]);
+          json.decode(response.body)["data"]["results"][0]);
     } else {
       throw ServerException();
     }
@@ -56,8 +56,9 @@ class CharactersRemoteDataSourceImpl implements CharactersRemoteDataSource {
     );
 
     if (response.statusCode == 200) {
-      final respDecoded = json.decode(response.body)["data"]["results"];
-      return respDecoded.map((e) => CharacterModel.fromJson(e));
+      final List<dynamic> respDecoded =
+          json.decode(response.body)["data"]["results"];
+      return respDecoded.map((e) => CharacterModel.fromJson(e)).toList();
     } else {
       throw ServerException();
     }
