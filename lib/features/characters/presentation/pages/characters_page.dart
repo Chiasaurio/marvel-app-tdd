@@ -11,21 +11,33 @@ class CharactersPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: AppBar(
         title: const Text('Personajes de Marvel'),
       ),
       body: BlocProvider(
-        create: (context) => sl<CharactersCubit>(),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-            SearchBar(),
-            CharactersPreview(),
-          ],
-        ),
-      ),
+          create: (context) => sl<CharactersCubit>(),
+          child: CustomScrollView(
+            slivers: [
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Column(
+                  children: <Widget>[
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: const [
+                          SearchBar(),
+                          CharactersPreview(),
+                        ],
+                      ),
+                    ),
+                    const Text('Footer'),
+                  ],
+                ),
+              ),
+            ],
+          )),
     );
   }
 }
