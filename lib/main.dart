@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
           900: color.withOpacity(1),
         }),
       ),
+      debugShowCheckedModeBanner: false,
       home: const CharactersPage(),
     );
   }
