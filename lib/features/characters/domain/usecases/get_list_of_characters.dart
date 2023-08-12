@@ -1,5 +1,4 @@
 import 'package:bia_flutter_test/core/usecases/usecase.dart';
-import 'package:bia_flutter_test/features/characters/domain/usecases/get_concrete_character.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 

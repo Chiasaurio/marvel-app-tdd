@@ -1,5 +1,3 @@
-import 'package:bia_flutter_test/core/error/failure.dart';
-import 'package:bia_flutter_test/core/usecases/usecase.dart';
 import 'package:bia_flutter_test/features/characters/domain/entities/character.dart';
 import 'package:bia_flutter_test/features/characters/domain/repositories/characters_repository.dart';
 import 'package:bia_flutter_test/features/characters/domain/usecases/get_list_of_characters.dart';
@@ -7,12 +5,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-class MockCharactersRepository extends Mock implements CharactersRepository {
-  // @override
-  // Future<Either<Failure, List<Character>>> getListOfCharacters() async {
-  //   return const Right(<Character>[]);
-  // }
-}
+class MockCharactersRepository extends Mock implements CharactersRepository {}
 
 void main() {
   late GetListOfCharacters usecase;
