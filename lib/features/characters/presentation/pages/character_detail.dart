@@ -106,7 +106,8 @@ class CharacterDetailPage extends StatelessWidget {
                                       ),
                                       width: MediaQuery.of(context).size.width *
                                           0.9,
-                                      height: 200,
+                                      constraints:
+                                          const BoxConstraints(minHeight: 200),
                                       child: Padding(
                                         padding: const EdgeInsets.all(10.0),
                                         child: Center(
