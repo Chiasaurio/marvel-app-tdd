@@ -18,7 +18,7 @@ class _CharactersSwiperState extends State<CharactersSwiper> {
 
   @override
   void initState() {
-    hola();
+    loadImagesClip();
     super.initState();
   }
 
@@ -62,7 +62,7 @@ class _CharactersSwiperState extends State<CharactersSwiper> {
     ]);
   }
 
-  void hola() {
+  void loadImagesClip() {
     imageSliders = widget.characters
         .map((item) => Container(
               margin: const EdgeInsets.all(5.0),
@@ -70,8 +70,10 @@ class _CharactersSwiperState extends State<CharactersSwiper> {
                   borderRadius: const BorderRadius.all(Radius.circular(5.0)),
                   child: Stack(
                     children: <Widget>[
-                      Image.network(item.thumbnail,
-                          fit: BoxFit.cover, width: 1000.0),
+                      Image.network(
+                          '${item.thumbnail}/landscape_incredible.jpg',
+                          fit: BoxFit.cover,
+                          width: 1000.0),
                       Positioned(
                         bottom: 0.0,
                         left: 0.0,

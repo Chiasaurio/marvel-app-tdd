@@ -14,11 +14,16 @@ class CharactersPreview extends StatelessWidget {
         child: BlocBuilder<CharactersCubit, CharactersState>(
           builder: (context, state) {
             if (state is LoadedList) {
+              if (state.characters.isEmpty) {
+                return const Text("Can't find anything.");
+              }
               return CharactersSwiper(
                 characters: state.characters,
               );
             } else if (state is Loading) {
-              return const Text('Start searching!');
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
             } else {
               return const Text('Start searching!');
             }
