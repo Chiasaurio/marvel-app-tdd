@@ -4,7 +4,7 @@ An application of marvel superheroes using http://developer.marvel.com/ API
 
 Constructed using a Test Driven Development(TDD) and maintaining a clean architecture pattern design.
 
-![Clean architecture]([https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg])
+![Clean architecture](https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg)
 
 
 Some preview images.
