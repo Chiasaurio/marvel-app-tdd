@@ -6,10 +6,11 @@ import 'package:bia_flutter_test/features/characters/domain/usecases/get_concret
 import 'package:bia_flutter_test/features/characters/domain/usecases/get_list_of_characters.dart';
 import 'package:bia_flutter_test/features/characters/presentation/cubit/characters_cubit.dart';
 import 'package:get_it/get_it.dart';
+import 'package:internet_connection_checker_plus/internet_connection_checker_plus.dart';
 
 import 'package:http/http.dart' as http;
-import 'package:internet_connection_checker/internet_connection_checker.dart';
 
+// import 'package:internet_connection_checker/internet_connection_checker.dart';
 final sl = GetIt.instance;
 
 void init() {
@@ -44,5 +45,5 @@ void init() {
 
   //! External
   sl.registerLazySingleton(() => http.Client());
-  sl.registerLazySingleton(() => InternetConnectionChecker());
+  sl.registerLazySingleton(() => InternetConnectionCheckerPlus());
 }
