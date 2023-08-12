@@ -1,16 +1,10 @@
 # bia_flutter_test
 
-A new Flutter project.
+An application of marvel superheroes using http://developer.marvel.com/ API
 
-## Getting Started
+Constructed using a Test Driven Development(TDD) and maintaining a clean architecture pattern design.
 
-This project is a starting point for a Flutter application.
+![alt text]([http://url/to/img.png](https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg)https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Some preview images.
