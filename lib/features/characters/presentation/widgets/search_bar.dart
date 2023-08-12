@@ -11,14 +11,15 @@ class SearchBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(
-          width: 600,
+          width: MediaQuery.of(context).size.width * 0.9,
           child: TextField(
+            autofocus: false,
             onChanged: (value) {
               BlocProvider.of<CharactersCubit>(context).getCharacterList(value);
             },
             cursorColor: Colors.white70,
             style: const TextStyle(
-              fontSize: 18,
+              fontSize: 16,
               color: Colors.white,
             ),
             decoration: InputDecoration(
@@ -32,7 +33,7 @@ class SearchBar extends StatelessWidget {
               contentPadding:
                   const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
               hintText: '¿Que personaje deseas buscar?',
-              hintStyle: const TextStyle(fontSize: 18, color: Colors.white70),
+              hintStyle: const TextStyle(fontSize: 16, color: Colors.white70),
               filled: true,
               fillColor: Theme.of(context).colorScheme.primary,
               border: OutlineInputBorder(

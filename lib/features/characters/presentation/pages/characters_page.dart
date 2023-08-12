@@ -11,6 +11,7 @@ class CharactersPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('Personajes de Marvel'),
       ),
@@ -19,6 +20,7 @@ class CharactersPage extends StatelessWidget {
           child: CustomScrollView(
             slivers: [
               SliverFillRemaining(
+                fillOverscroll: true,
                 hasScrollBody: false,
                 child: Column(
                   children: <Widget>[
@@ -32,7 +34,6 @@ class CharactersPage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const Text('Footer'),
                   ],
                 ),
               ),

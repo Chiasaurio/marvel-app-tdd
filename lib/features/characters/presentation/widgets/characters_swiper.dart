@@ -33,33 +33,13 @@ class _CharactersSwiperState extends State<CharactersSwiper> {
         options: CarouselOptions(
             autoPlay: true,
             enlargeCenterPage: true,
-            aspectRatio: 5.0,
-            viewportFraction: 0.3,
+            aspectRatio: 1.0,
+            viewportFraction: 0.8,
             onPageChanged: (index, reason) {
               setState(() {
                 _current = index;
               });
             }),
-      ),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: widget.characters.asMap().entries.map((entry) {
-          return GestureDetector(
-            onTap: () => _controller.animateToPage(entry.key),
-            child: Container(
-              width: 12.0,
-              height: 12.0,
-              margin:
-                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: (Theme.of(context).brightness == Brightness.dark
-                          ? Colors.white
-                          : Colors.black)
-                      .withOpacity(_current == entry.key ? 0.9 : 0.4)),
-            ),
-          );
-        }).toList(),
       ),
     ]);
   }
@@ -77,10 +57,8 @@ class _CharactersSwiperState extends State<CharactersSwiper> {
                     borderRadius: const BorderRadius.all(Radius.circular(5.0)),
                     child: Stack(
                       children: <Widget>[
-                        Image.network(
-                            '${item.thumbnail}/landscape_incredible.jpg',
-                            fit: BoxFit.cover,
-                            width: 1000.0),
+                        Image.network('${item.thumbnail}/portrait_uncanny.jpg',
+                            fit: BoxFit.cover, width: 1000.0),
                         Positioned(
                           bottom: 0.0,
                           left: 0.0,

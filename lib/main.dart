@@ -14,24 +14,29 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const Color color = Color(0xFF0b0c1e);
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: MaterialColor(0xFF0b0c1e, {
-          50: color.withOpacity(.1),
-          100: color.withOpacity(.2),
-          200: color.withOpacity(.3),
-          300: color.withOpacity(.4),
-          400: color.withOpacity(.5),
-          500: color.withOpacity(.6),
-          600: color.withOpacity(.7),
-          700: color.withOpacity(.8),
-          800: color.withOpacity(.9),
-          900: color.withOpacity(1),
-        }),
+    return GestureDetector(
+      onTap: () {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: MaterialColor(0xFF0b0c1e, {
+            50: color.withOpacity(.1),
+            100: color.withOpacity(.2),
+            200: color.withOpacity(.3),
+            300: color.withOpacity(.4),
+            400: color.withOpacity(.5),
+            500: color.withOpacity(.6),
+            600: color.withOpacity(.7),
+            700: color.withOpacity(.8),
+            800: color.withOpacity(.9),
+            900: color.withOpacity(1),
+          }),
+        ),
+        debugShowCheckedModeBanner: false,
+        home: const CharactersPage(),
       ),
-      debugShowCheckedModeBanner: false,
-      home: const CharactersPage(),
     );
   }
 }

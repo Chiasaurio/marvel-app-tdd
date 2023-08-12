@@ -32,7 +32,7 @@ class CharacterDetailPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          child: Row(
+                          child: Column(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -46,10 +46,12 @@ class CharacterDetailPage extends StatelessWidget {
                                   child: Stack(
                                     children: <Widget>[
                                       Image.network(
-                                        '${character.thumbnail}/portrait_uncanny.jpg',
+                                        '${character.thumbnail}/landscape_incredible.jpg',
                                         fit: BoxFit.cover,
-                                        width: 300.0,
-                                        height: 500,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.9,
+                                        height: 120,
                                       ),
                                       Positioned(
                                         bottom: 0.0,
@@ -102,8 +104,9 @@ class CharacterDetailPage extends StatelessWidget {
                                           ],
                                         ),
                                       ),
-                                      width: 300.0,
-                                      height: 500,
+                                      width: MediaQuery.of(context).size.width *
+                                          0.9,
+                                      height: 200,
                                       child: Padding(
                                         padding: const EdgeInsets.all(10.0),
                                         child: Center(
