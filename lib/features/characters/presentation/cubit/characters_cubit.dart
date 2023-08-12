@@ -10,7 +10,7 @@ class CharactersCubit extends Cubit<CharactersState> {
   final GetConcreteCharacter getConcreteCharacter;
   final GetListOfCharacters getListOfCharacters;
 
-  final String SERVER_FAILURE_MESSAGE = 'Server Failure';
+  final String serverFailureMessage = 'Server Failure';
 
   CharactersCubit(
       {required GetConcreteCharacter concrete,
@@ -24,7 +24,7 @@ class CharactersCubit extends Cubit<CharactersState> {
     final failureOrCharacter =
         await getConcreteCharacter(ConcreteParams(number: id));
     emit(failureOrCharacter.fold(
-        (failure) => Error(message: SERVER_FAILURE_MESSAGE),
+        (failure) => Error(message: serverFailureMessage),
         (character) => LoadedConcrete(character: character)));
   }
 
@@ -33,7 +33,7 @@ class CharactersCubit extends Cubit<CharactersState> {
     final failureOrCharacters =
         await getListOfCharacters(CharacterListParams(nameStarsWith: name));
     emit(failureOrCharacters.fold(
-        (failure) => Error(message: SERVER_FAILURE_MESSAGE),
+        (failure) => Error(message: serverFailureMessage),
         (characters) => LoadedList(characters: characters)));
   }
 }
